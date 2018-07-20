@@ -1,6 +1,7 @@
 var Q = require('q');
 
-var db = require('mongojs').connect('quiz', ['scores', 'players']);
+var mongojs = require('mongojs')
+var db = mongojs(process.env.connection_string, ['scores', 'players']);
 
 function Quiz () {
     this.startQuiz();
